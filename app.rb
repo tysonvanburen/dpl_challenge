@@ -30,9 +30,8 @@ dude.say "Alright, I am #{dude.energy_level}"
 
 if dude.energy > 5
   dude.say "Need me to grab you anything? (Y/n)"
-  answer = gets.chomp
-  answer.downcase
-  case answer
+  while answer = gets.chomp
+  case answer.downcase
   when 'y'
     dude.run
     dude.say "Here you go."
@@ -43,5 +42,6 @@ if dude.energy > 5
     exit
   else
     puts "what?"
+  end
   end
 end
